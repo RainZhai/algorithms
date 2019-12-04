@@ -1,4 +1,3 @@
-//快速排序
 function qSort(arr){
     if(arr.length==0){
         return []
@@ -13,16 +12,13 @@ function qSort(arr){
             left.push(arr[i])
         }else{
             console.log("移动"+ arr[i] + "到右边" );
-            left.push(arr[i])
+            right.push(arr[i])
         }
     }
-    return qSort(left).cancat(pivot, qSort(right))
+    return qSort(left).concat(pivot, qSort(right))
 }
 
-var a = [];
-for(var i=0; i<10; ++i){
-    a[i] = Math.floor((Math.random()*100)+1);
-}
+var a = [2,3,33,22,11]; 
 
 console.log(a);
 console.log(qSort(a));
